@@ -20,22 +20,53 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        
-        <meta name="viewport" content="width=device-width, userscalable=no, initial-scale=0.5, maximum-scale=0.5" />
-        
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+                <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
   
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>AndaluSun</title>
     </head>
     <body>
 
         <div>
+        
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+ $("#h01").html("This is Hello World by JQuery");
+});
+ 
+</script>
+
+
+        
+
+
+<h1 id="h01">aa</h1>  
+        
+        <a id="map">dddddddddddddd</a>
+        
+        <script type="text/javascript">
+
+			$('#map').bind('click', function(){
+			alert("toto");
+			    var url = 'http://maps.google.com/maps?';
+			    url += 'q=36.245294,-5.320414'; 
+			    // open the native maps app by calling window location
+			    // window.location = url;
+			    
+			     window.open(url, '_system');
+			});
+
+        </script>
+
+
 
 		<p>&nbsp;</p>
 		<div class="menu">
 		<ul class="Menu">
-				<li>Nous rejoindre avec plans <a href="http://maps.apple.com/?q=36.245294,-5.320414">Lien<a></li>
+				<li>Nous rejoindre avec plans <a href="http://maps.apple.com/?q=36.245294,-5.320414">Lien</a></li>
 				<li>Shopping</li>
 				<li>Se restaurer</li>
 				<li>Les plages</li>
@@ -47,8 +78,8 @@
 		</div>
 		      
         <img src="img/NousRejoindre.png" alt="NousRejoindre" width="275" height="275">
-        </div>
         
+        </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
