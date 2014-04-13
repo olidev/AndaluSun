@@ -177,6 +177,9 @@
 
 
     if (Retina.isRetina()) {
+    	alert("Retina OK")
         Retina.init(root);
+    } else {
+    	alert("Retina Not OK")
     }
 })();
