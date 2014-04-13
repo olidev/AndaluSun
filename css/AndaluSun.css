@@ -24,7 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+    background-color:#EFEFF4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -137,10 +137,10 @@ body {
 	position:absolute; z-index:2;
 	top:0; left:0;
 	width:100%;
-	height:55px;
+	height:60px;
 	line-height:45px;
 	background-color:#1F9456;
-
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 
 	color:#eee;
 	font-size:20px;
@@ -156,10 +156,18 @@ body {
 	color:#f3f3f3;
 	text-decoration:none;
 	font-weight:bold;
-	margin-top: 10px;
-	text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+	margin-top: 13px;
+	font-size:17px;
+
+	
 }
 
+#header span a {
+	text-decoration:none;
+	color:#FDDE73;
+	margin-top: 13px;
+	float: left;
+}
 
 
 
@@ -176,7 +184,7 @@ body {
 	position:absolute; z-index:1;
 	top:45px; bottom:48px; left:0;
 	width:100%;
-	background:#aaa;
+	background:#EFEFF4;
 	overflow:auto;
 }
 
