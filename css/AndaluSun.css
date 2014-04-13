@@ -15,6 +15,7 @@ body {
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', "Helvetica";
 }
 
+
 #header {
 	position:absolute; z-index:2;
 	top:0; left:0;
@@ -85,8 +86,8 @@ body {
 
 #liste {
 	top:20px;
+	min-height: 10px;
 	width:100%;
-	background:red;
 }
 
 
