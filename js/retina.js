@@ -174,6 +174,7 @@
         }
         load();
     };
+/*!
 
 
     if (Retina.isRetina()) {
@@ -182,4 +183,6 @@
     } else {
     	alert("Retina Not OK")
     }
+
+ */
 })();

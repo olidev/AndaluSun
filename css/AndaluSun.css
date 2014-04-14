@@ -45,7 +45,7 @@ body {
 	position:absolute; z-index:2;
 	top:0; left:0;
 	width:100%;
-	height:60px;
+	height:65px;
 	line-height:45px;
 	background-color:#1F9456;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -83,9 +83,10 @@ body {
 	position:absolute; z-index:2;
 	bottom:0; left:0;
 	width:100%;
-	height:48px;
-	background-color:#1F9456;
+	height:55px;
+	background-color:#F3F7F9;
 	padding:0;
+	border-top:1px solid #a0a0a0;
 }
 
 #wrapper {
@@ -135,6 +136,16 @@ body {
 	border-top:1px solid #fff;
 	background-color:#fafafa;
 	font-size:14px;
+}
+
+table.bottom-menu {
+	width: 100%;
+}
+
+table.bottom-menu td {
+	width:20%;
+	text-align:center;
+	vertical-align: bottom;
 }
 
 
