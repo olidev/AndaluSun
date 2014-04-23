@@ -32,12 +32,21 @@
 
 
 
-
 body {
 	font-size:12px;
 	-webkit-user-select:none;
     -webkit-text-size-adjust:none;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', "Helvetica";
+}
+
+
+.map {
+	background: green;
+	float: right;
+	padding-left: 15px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
 }
 
 

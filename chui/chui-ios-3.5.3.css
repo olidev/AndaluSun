@@ -3,12 +3,12 @@
    6  /\
      /OO\
     /OOOO\
-   /OOOOOO\
-  (OOOOOOOO)
-   \:~==~:/
+  /OOOOOOOO\
+ ((OOOOOOOO))
+  \:~=++=~:/
 
 ChocolateChip-UI
-ChUI-iOS.css
+ChUI.iOS.css
 Copyright 2014 Sourcebits www.sourcebits.com
 License: MIT
 Version: 3.5.3
@@ -48,6 +48,7 @@ h1,
   font-weight: 200;
   line-height: 1.1429;
   /* 64px when font-size is 42pt */
+
 }
 h2,
 .type-x-large {
@@ -55,6 +56,7 @@ h2,
   font-weight: 200;
   line-height: 1.2;
   /* 32px when font-size is 20pt */
+
 }
 h3,
 .type-large {
@@ -62,6 +64,7 @@ h3,
   font-weight: 600;
   line-height: 1.3636;
   /* 20px when font-size is 11pt */
+
 }
 h4,
 .type-medium,
@@ -72,6 +75,7 @@ samp {
   font-weight: 400;
   line-height: 1.3636;
   /* 20px when font-size is 11pt */
+
 }
 body,
 h5,
@@ -81,6 +85,7 @@ legend {
   font-weight: 300;
   line-height: 1.3636;
   /* 20px when font-size is 11pt */
+
 }
 h6,
 caption,
@@ -91,6 +96,7 @@ small,
   font-weight: 400;
   line-height: 1.6667;
   /* 20px when font-size is 9pt */
+
 }
 /* ==============================
    Article (view)
@@ -112,11 +118,13 @@ article {
   -webkit-box-align: center;
   -webkit-box-pack: start;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
   -webkit-align-items: flex-start;
   /* No prefix */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,11 +203,13 @@ article > section,
 .vertical,
 li.comp > aside.vertical {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: start;
   -webkit-box-align: start;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: flex-start;
@@ -211,11 +221,13 @@ li.comp > aside.vertical {
 }
 .horizontal {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-align-items: start;
   -webkit-box-pack: start;
   -webkit-box-align: start;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-box-orient: horizontal;
@@ -359,11 +371,13 @@ nav {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -931,11 +945,13 @@ html[dir=rtl] .grid {
   transition: none;
   font-size: 10pt;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -1133,11 +1149,13 @@ html[dir=rtl] .segmented.paging.horizontal > .button::before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -1193,11 +1211,13 @@ html[dir=rtl] .splitlayout > .detail + .toolbar {
    =========================== */
 body.splitlayout {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: stretch;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -1413,11 +1433,13 @@ html[dir=rtl] body.splitlayout > article.detail {
 }
 .popup > .panel {
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -1520,11 +1542,13 @@ html[dir=rtl] body.splitlayout > article.detail {
   top: 0;
   bottom: 0;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -1841,11 +1865,13 @@ article.current.blurred.removeBlurSlow {
   -webkit-box-align: center;
   -webkit-box-pack: start;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
   -webkit-align-items: flex-start;
   /* No prefix */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1913,14 +1939,15 @@ html[dir=rtl] .slide-out.open {
 }
 /* ==============================
    Stepper Control
-   =========================== */
-.stepper {
+   =========================== */.stepper {
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -2191,11 +2218,13 @@ body.hasTabBar .next:not(.navigable) {
 }
 .tabbar {
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -2225,11 +2254,13 @@ body.hasTabBar .next:not(.navigable) {
   -webkit-box-flex: 1 !important;
   -webkit-flex: 1 !important;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;

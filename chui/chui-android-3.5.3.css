@@ -3,12 +3,12 @@
    6  /\
      /OO\
     /OOOO\
-   /OOOOOO\
-  (OOOOOOOO)
-   \:~==~:/
+  /OOOOOOOO\
+ ((OOOOOOOO))
+  \:~=++=~:/
 
 ChocolateChip-UI
-ChUI-Android.css
+ChUI.Android.css
 Copyright 2014 Sourcebits www.sourcebits.com
 License: MIT
 Version: 3.5.3
@@ -30,6 +30,7 @@ body {
 }
 body {
   /* Change background color for your app: */
+
   background-color: #f2f0f0;
   font: normal 14px/18px Roboto, SegoeWP, HelveticaNeue, Sans-serif;
   -webkit-user-select: none;
@@ -50,6 +51,7 @@ article {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -59,6 +61,7 @@ article {
   justify-content: center;
   align-items: flex-start;
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: start;
@@ -128,11 +131,13 @@ article > section > :last-child::after,
 .vertical,
 li.comp > aside.vertical {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: start;
   -webkit-box-align: start;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: flex-start;
@@ -144,6 +149,7 @@ li.comp > aside.vertical {
 }
 .horizontal {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
@@ -161,11 +167,13 @@ li.comp > aside.vertical {
 }
 .horizontal.centered {
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: start;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-align-items: center;
@@ -239,6 +247,7 @@ a.button.backTo::after {
   height: 35px;
   width: 35px;
   /* user your own app icon for this: */
+
   background: transparent url('data:image/svg+xml;utf8, %3Csvg%20width%3D%2276px%22%20height%3D%2288px%22%20viewBox%3D%220%200%2076%2088%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%3Cg%20id%3D%22android%22%20sketch%3Atype%3D%22MSLayerGroup%22%20transform%3D%22translate%281.000000,%200.000000%29%22%20fill%3D%22%2383CA1B%22%3E%3Cpath%20d%3D%22M47.287,17.993%20C45.735,17.993%2044.477,16.85%2044.477,15.439%20C44.477,14.027%2045.735,12.885%2047.287,12.885%20C48.839,12.885%2050.097,14.027%2050.097,15.439%20C50.097,16.85%2048.839,17.993%2047.287,17.993%20M27.141,17.993%20C25.588,17.993%2024.33,16.85%2024.33,15.439%20C24.33,14.027%2025.588,12.885%2027.141,12.885%20C28.692,12.885%2029.95,14.027%2029.95,15.439%20C29.95,16.85%2028.692,17.993%2027.141,17.993%20M48.508,8.272%20L53.471,1.766%20C53.765,1.383%2053.691,0.833%2053.306,0.539%20C52.921,0.246%2052.372,0.32%2052.079,0.705%20L46.807,7.612%20C43.886,6.591%2040.653,6.023%2037.25,6.023%20C33.981,6.023%2030.869,6.547%2028.039,7.493%20L22.86,0.705%20C22.566,0.32%2022.016,0.246%2021.631,0.539%20C21.247,0.833%2021.174,1.383%2021.467,1.766%20L26.324,8.133%20C18.825,11.227%2013.708,17.407%2013.708,24.527%20C13.708,24.592%2013.806,24.85%2013.807,24.915%20L60.781,24.85%20C60.784,24.742%2060.791,24.635%2060.791,24.527%20C60.791,17.512%2055.826,11.41%2048.508,8.272%22%20id%3D%22Shape%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%3Cpath%20d%3D%22M74.5,34.004%20C74.5,30.935%2072.098,28.448%2069.135,28.448%20L68.767,28.448%20C65.804,28.448%2063.401,30.935%2063.401,34.004%20L63.401,55.178%20C63.401,58.247%2065.804,60.735%2068.767,60.735%20L69.135,60.735%20C72.098,60.735%2074.5,58.247%2074.5,55.178%20L74.5,34.004%20L74.5,34.004%20Z%22%20id%3D%22Shape%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%3Cpath%20d%3D%22M17.822,70.824%20L22.37,70.824%20L22.37,82.003%20C22.37,85.072%2024.87,87.64%2027.833,87.64%20L28.052,87.64%20C31.016,87.64%2033.468,85.072%2033.468,82.003%20L33.468,70.824%20L41.54,70.824%20L41.54,82.003%20C41.54,85.072%2044.141,87.64%2047.104,87.64%20L47.323,87.64%20C50.286,87.64%2052.639,85.072%2052.639,82.003%20L52.639,70.824%20L56.896,70.824%20C59.168,70.824%2060.852,68.79%2060.852,66.517%20L60.809,27.984%20L13.415,27.943%20L13.289,66.364%20C13.289,68.636%2015.551,70.824%2017.822,70.824%20Z%22%20id%3D%22Shape%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%3Cpath%20d%3D%22M10.599,34.004%20C10.599,30.935%208.197,28.448%205.234,28.448%20L4.866,28.448%20C1.903,28.448%20-0.5,30.935%20-0.5,34.004%20L-0.5,55.178%20C-0.5,58.247%201.903,60.735%204.866,60.735%20L5.234,60.735%20C8.197,60.735%2010.599,58.247%2010.599,55.178%20L10.599,34.004%20L10.599,34.004%20Z%22%20id%3D%22Shape%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%3Cpath%20d%3D%22M74.5,34.004%20C74.5,30.935%2072.098,28.448%2069.135,28.448%20L68.767,28.448%20C65.804,28.448%2063.401,30.935%2063.401,34.004%20L63.401,55.178%20C63.401,58.247%2065.804,60.735%2068.767,60.735%20L69.135,60.735%20C72.098,60.735%2074.5,58.247%2074.5,55.178%20L74.5,34.004%20L74.5,34.004%20Z%22%20id%3D%22Shape%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E') no-repeat;
   background-size: auto 100%;
   background-position: center center;
@@ -320,11 +329,13 @@ nav {
   height: 50px;
   box-sizing: border-box;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: start;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-align-items: center;
@@ -809,11 +820,13 @@ html[dir=rtl] .grid {
 }
 .segmented > .button {
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -995,11 +1008,13 @@ html[dir=rtl] article.paging.horizontal > section.current {
   padding: 0 15px;
   box-sizing: border-box;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
   -webkit-box-pack: start;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-align-items: center;
@@ -1058,11 +1073,13 @@ html[dir=rtl] .splitlayout > .detail + .toolbar {
    =========================== */
 body.splitlayout {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: start;
   -webkit-box-align: stretch;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-start;
@@ -1160,8 +1177,7 @@ html[dir=rtl] body.splitlayout > article.detail {
 }
 /* ==============================
    Busy Control
-   =========================== */
-@-webkit-keyframes activityIndicatorAnimLeft {
+   =========================== */@-webkit-keyframes activityIndicatorAnimLeft {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -1500,6 +1516,7 @@ textarea {
   border: none;
   background-color: transparent;
   /* Create the bracket around inputs: */
+
   background-image: -webkit-linear-gradient(left, #888888, #888888), -webkit-linear-gradient(left, #888888, #888888), -webkit-linear-gradient(left, #888888, #888888);
   background-image: linear-gradient(left, #888888, #888888), linear-gradient(left, #888888, #888888), linear-gradient(left, #888888, #888888);
   background-size: 1px 4px, 1px 4px, 100% 1px;
@@ -1516,6 +1533,7 @@ input:focus,
 textarea:focus {
   outline: none !important;
   /* Create the bracket around inputs: */
+
   background-image: -webkit-linear-gradient(left, #81cfeb, #81cfeb), -webkit-linear-gradient(left, #81cfeb, #81cfeb), -webkit-linear-gradient(left, #81cfeb, #81cfeb);
   background-image: linear-gradient(left, #81cfeb, #81cfeb), linear-gradient(left, #81cfeb, #81cfeb), linear-gradient(left, #81cfeb, #81cfeb);
 }
@@ -1537,6 +1555,7 @@ input[type="search"] {
   border: none;
   background-color: transparent;
   /* Create the bracket around inputs: */
+
   background-size: 2px 4px, 2px 4px, 100% 2px;
   background-position: bottom left, bottom right, bottom left;
   background-repeat: no-repeat;
@@ -1546,6 +1565,7 @@ input[type="search"]:focus {
   outline: none;
   outline: none !important;
   /* Create the bracket around inputs: */
+
   background-image: -webkit-linear-gradient(left, #81cfeb, #81cfeb), -webkit-linear-gradient(left, #81cfeb, #81cfeb), -webkit-linear-gradient(left, #81cfeb, #81cfeb);
   background-image: linear-gradient(left, #81cfeb, #81cfeb), linear-gradient(left, #81cfeb, #81cfeb), linear-gradient(left, #81cfeb, #81cfeb);
 }
@@ -1741,6 +1761,7 @@ html[dir=rtl] .sheet > section > h2 {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   /* New syntax */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -1750,6 +1771,7 @@ html[dir=rtl] .sheet > section > h2 {
   justify-content: center;
   align-items: flex-start;
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: start;
@@ -1826,8 +1848,7 @@ html[dir=rtl] .slide-out.open {
 }
 /* ==============================
    Stepper Control
-   =========================== */
-.stepper {
+   =========================== */.stepper {
   display: -webkit-inline-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: center;
@@ -1995,6 +2016,7 @@ body.hasTabBar article .next:not(.navigable) {
 }
 .tabbar {
   /* Old syntax */
+
   display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-align: center;
@@ -2044,11 +2066,13 @@ body.hasTabBar article .next:not(.navigable) {
   font-size: 0;
   border-left: solid 1px #666666;
   /* old flex box */
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   /* new flex box */
+
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;

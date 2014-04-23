@@ -3,9 +3,9 @@
    6  /\
      /OO\
     /OOOO\
-   /OOOOOO\
-  (OOOOOOOO)
-   \:~==~:/
+  /OOOOOOOO\
+ ((OOOOOOOO))
+  \:~=++=~:/
 
 ChocolateChip-UI
 ChUI.js
@@ -15,6 +15,8 @@ Version: 3.5.3
 */
 (function($) {
   'use strict';
+
+
   $.extend({
     ///////////////
     // Create Uuid:
@@ -22,12 +24,14 @@ Version: 3.5.3
     Uuid : function() {
       return Date.now().toString(36);
     },
+
     ///////////////////////////
     // Concat array of strings:
     ///////////////////////////
     concat : function ( args ) {
       return (args instanceof Array) ? args.join('') : [].slice.apply(arguments).join('');
     },
+
     ////////////////////////////
     // Version of each that uses
     // regular paramater order:
@@ -36,12 +40,15 @@ Version: 3.5.3
       function isArraylike( obj ) {
         var length = obj.length,
           type = jQuery.type( obj );
+
         if ( type === "function" || jQuery.isWindow( obj ) ) {
           return false;
         }
+
         if ( obj.nodeType === 1 && length ) {
           return true;
         }
+
         return type === "array" || length === 0 ||
           typeof length === "number" && length > 0 && ( length - 1 ) in obj;
       } 
@@ -49,10 +56,12 @@ Version: 3.5.3
       i = 0,
       length = obj.length,
       isArray = isArraylike( obj );
+
       if ( args ) {
         if ( isArray ) {
           for ( ; i < length; i++ ) {
             value = callback.apply( obj[ i ], args );
+
             if ( value === false ) {
               break;
             }
@@ -60,16 +69,19 @@ Version: 3.5.3
         } else {
           for ( i in obj ) {
             value = callback.apply( obj[ i ], args );
+
             if ( value === false ) {
               break;
             }
           }
         }
+
       // A special, fast, case for the most common use of each
       } else {
         if ( isArray ) {
           for ( ; i < length; i++ ) {
             value = callback.call( obj[ i ], obj[ i ], i );
+
             if ( value === false ) {
               break;
             }
@@ -77,6 +89,7 @@ Version: 3.5.3
         } else {
           for ( i in obj ) {
             value = callback.call( obj[ i ], obj[ i ], i );
+
             if ( value === false ) {
               break;
             }
@@ -85,6 +98,7 @@ Version: 3.5.3
       }
     }
   });
+
   $.fn.extend({
     //////////////////////
     // Return element that 
@@ -99,6 +113,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     //////////////////////////////
     // Return element that doesn't 
     // match selector:
@@ -128,6 +143,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     //////////////////////////////////////
     // Return element that has class name:
     //////////////////////////////////////
@@ -140,6 +156,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     //////////////////////////////
     // Return element that doesn't 
     // have class name:
@@ -153,6 +170,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     /////////////////////////////////////
     // Return element that has attribute:
     /////////////////////////////////////
@@ -165,6 +183,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     //////////////////////////
     // Return element that 
     // doesn't have attribute:
@@ -178,6 +197,7 @@ Version: 3.5.3
       });
       return ret;
     },
+
     ////////////////////////////
     // Version of each that uses
     // regular paramater order:
@@ -185,7 +205,9 @@ Version: 3.5.3
     forEach : function ( callback, args ) {
       return $.forEach( this, callback, args );
     }
-  }); 
+  });
+
+ 
  
   $.extend({
     eventStart : null,
@@ -195,6 +217,7 @@ Version: 3.5.3
     // Define min-length for gesture detection:
     gestureLength : 30 
   });
+
   $(function() {
     //////////////////////////
     // Setup Event Variables:
@@ -225,6 +248,7 @@ Version: 3.5.3
       $.eventCancel = 'mouseout';
     }
   });
+
  
  
   $.extend({
@@ -251,6 +275,8 @@ Version: 3.5.3
     isChrome : /Chrome/img.test(navigator.userAgent),
     isNativeAndroid : (/android/i.test(navigator.userAgent) && /webkit/i.test(navigator.userAgent) && !/chrome/i.test(navigator.userAgent))
   });
+
+
   //////////////////////////////////////////////////////
   // Swipe Gestures for ChocolateChip-UI.
   // Includes mouse gestures for desktop compatibility.
@@ -262,13 +288,16 @@ Version: 3.5.3
   var longTapDelay = 750;
   var singleTapDelay = 150;
   var longTapTimeout;
+
   function parentIfText(node) {
     return 'tagName' in node ? node : node.parentNode;
   }
+
   function swipeDirection(x1, x2, y1, y2) {
     return Math.abs(x1 - x2) >=
     Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'left' : 'right') : (y1 - y2 > 0 ? 'up' : 'down');
   }
+
   function longTap() {
     longTapTimeout = null;
     if (touch.last) {
@@ -280,10 +309,12 @@ Version: 3.5.3
       } catch(err) { }
     }
   }
+
   function cancelLongTap() {
     if (longTapTimeout) clearTimeout(longTapTimeout);
     longTapTimeout = null;
   }
+
   function cancelAll() {
     if (touchTimeout) clearTimeout(touchTimeout);
     if (tapTimeout) clearTimeout(tapTimeout);
@@ -292,6 +323,7 @@ Version: 3.5.3
     touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null;
     touch = {};
   }
+
   $(function(){
     var now;
     var delta;
@@ -371,8 +403,10 @@ Version: 3.5.3
           }
         }
       }
+
       if ($.isAndroid) {
         $.gestureLength = 10;
+
         if (!!touch.el) {
           // Swipe detection:
           if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > $.gestureLength) ||
@@ -385,14 +419,18 @@ Version: 3.5.3
                 touch = {};
               }
             }, 0);
+
           // Normal tap:
           } else if ('last' in touch) {
+
             // Delay by one tick so we can cancel the 'tap' event if 'scroll' fires:
             tapTimeout = setTimeout(function() {
+
             // Trigger universal 'tap' with the option to cancelTouch():
             if (touch && touch.el) {
               touch.el.trigger('tap');
             }
+
             // Trigger double tap immediately:
             if (touch && touch.isDoubleTap) {
               if (touch && touch.el) {
@@ -410,10 +448,12 @@ Version: 3.5.3
               }
               }, singleTapDelay);
             }
+
             }, 0);
           }
         } else { return; }  
       }
+
     });
     body.on($.eventEnd, function(e) {
       if (window.navigator.msPointerEnabled) {
@@ -435,14 +475,18 @@ Version: 3.5.3
               touch = {};
             }
           }, 0);
+
         // Normal tap:
         } else if ('last' in touch) {
+
           // Delay by one tick so we can cancel the 'tap' event if 'scroll' fires:
           tapTimeout = setTimeout(function() {
+
             // Trigger universal 'tap' with the option to cancelTouch():
             if (touch && touch.el) {
               touch.el.trigger('tap');
             }
+
             // Trigger double tap immediately:
             if (touch && touch.isDoubleTap) {
               if (touch && touch.el) {
@@ -460,12 +504,15 @@ Version: 3.5.3
                 }
               }, singleTapDelay);
             }
+
           }, 0);
         }
       } else { return; }
     });
     body.on('touchcancel', cancelAll);
+
   });
+
   ['swipe', 'swipeleft', 'swiperight', 'swipeup', 'swipedown', 'doubletap', 'tap', 'singletap', 'longtap'].forEach(function(method){ 
     // Add gesture events to ChocolateChipJS:
     $.fn.extend({
@@ -474,6 +521,8 @@ Version: 3.5.3
       }
     });
   });
+
+
   /////////////////////////////////////////
   // Set classes for desktop compatibility:
   /////////////////////////////////////////
@@ -500,6 +549,7 @@ Version: 3.5.3
       return m[1];
     }
   });
+
   $(function() {
     ////////////////////////////////
     // Added classes for client side
@@ -518,15 +568,19 @@ Version: 3.5.3
     }
     $.UIDesktopCompat();
   });
+
  
+
   $(function() { 
     $.body = $('body');
+
     //////////////////////
     // Add the global nav:
     //////////////////////
     if (!$.body[0].classList.contains('splitlayout')) {
       $('body').prepend("<nav id='global-nav'></nav>");
     }
+
     /////////////////////////////////////////////////
     // Fix Split Layout to display properly on phone:
     /////////////////////////////////////////////////
@@ -535,6 +589,7 @@ Version: 3.5.3
         $('meta[name=viewport]').attr('content','width=device-width, initial-scale=0.45, maximum-scale=2, user-scalable=yes');
       }
     }
+
     /////////////////////////////////////////////////////////
     // Add class to nav when button on right.
     // This allows us to adjust the nav h1 for small screens.
@@ -544,14 +599,18 @@ Version: 3.5.3
         ctx.classList.add('buttonOnRight');
       }
     });
+
     //////////////////////////////////////////
     // Get any toolbars and adjust the bottom 
     // of their corresponding articles:
     //////////////////////////////////////////
     $('.toolbar').prev('article').addClass('has-toolbar');
   });
+
+
   $.extend({
     subscriptions : {},
+
     // Topic: string defining topic: /some/topic
     // Data: a string, number, array or object.
     subscribe : function (topic, callback) {
@@ -565,6 +624,7 @@ Version: 3.5.3
       });
       return token;
     },
+
     unsubscribe : function ( token ) {
       setTimeout(function() {
         for (var m in $.subscriptions) {
@@ -580,6 +640,7 @@ Version: 3.5.3
         return false;
       });
     },
+
     publish : function ( topic, args ) {
       if (!$.subscriptions[topic]) {
         return false;
@@ -594,6 +655,8 @@ Version: 3.5.3
       return true;
    }
   });
+
+
   ////////////////////////////////////
   // Create custom navigationend event
   ////////////////////////////////////
@@ -605,6 +668,7 @@ Version: 3.5.3
     } else if ('-webkit-transition' in document.body.style){
       transition = '-webkit-transition-duration';
     }
+
     function determineDurationType (duration) {
       if (/m/.test(duration)) {
         return parseFloat(duration); 
@@ -612,12 +676,14 @@ Version: 3.5.3
         return parseFloat(duration) * 100;
       }
     }
+
     tansitionDuration = determineDurationType($('article').eq(0).css(transition));
     
     setTimeout(function() {
       $(target).trigger({type: 'navigationend'});
     }, tansitionDuration);
   }
+
   $.extend({
     ////////////////////////////////////////////////
     // Manage location.hash for client side routing:
@@ -626,6 +692,7 @@ Version: 3.5.3
       url = url || true;
       $.UISetHashOnUrl($.UINavigationHistory[$.UINavigationHistory.length-1], delimeter);
     },
+
     /////////////////////////////////////////////////////
     // Set the hash according to where the user is going:
     /////////////////////////////////////////////////////
@@ -649,6 +716,7 @@ Version: 3.5.3
         window.history.replaceState('Object', 'Title', hash);
       }
     },
+
     //////////////////////////////////////
     // Navigate Back to Non-linear Article
     //////////////////////////////////////
@@ -690,6 +758,7 @@ Version: 3.5.3
       $.UISetHashOnUrl($.UINavigationHistory[$.UINavigationHistory.length-1]);
       triggerNavigationEvent(destination);
     },
+
     ////////////////////////////////////
     // Navigate Back to Previous Article
     ////////////////////////////////////
@@ -720,6 +789,7 @@ Version: 3.5.3
       $.UINavigationHistory.pop();
       triggerNavigationEvent(destination);
     },
+
     isNavigating : false,
   
     ///////////////////////////////
@@ -754,9 +824,12 @@ Version: 3.5.3
       setTimeout(function() {
         $.isNavigating = false;
       }, 500);
+
       triggerNavigationEvent(destination);
+
     }
   });
+
   ///////////////////
   // Init navigation:
   ///////////////////
@@ -767,6 +840,7 @@ Version: 3.5.3
     $.extend({
       UINavigationHistory : ["#" + $('article').eq(0).attr('id')]
     });
+
     ///////////////////////////////////////////////////////////
     // Make sure that navs and articles have navigation states:
     ///////////////////////////////////////////////////////////
@@ -790,6 +864,7 @@ Version: 3.5.3
         ctx.classList.add('next'); 
       }
     }); 
+
       ///////////////////////////
     // Initialize Back Buttons:
     ///////////////////////////
@@ -813,6 +888,7 @@ Version: 3.5.3
       var destination = $(destinationHref);
       $.UIGoToArticle(destination);
     });
+
     $('li[data-goto]').each(function(idx, ctx) {
       $(ctx).closest('article').addClass('navigable');
       var navigable =  '#' + ctx.getAttribute('data-goto');
@@ -826,6 +902,7 @@ Version: 3.5.3
     if ($('article').eq(1)[0]) {
       $.UISetHashOnUrl($('article').eq(0)[0].id);
     }
+
     /////////////////////////////////////////////////////////
     // Stop rubber banding when dragging down on nav:
     /////////////////////////////////////////////////////////
@@ -833,6 +910,7 @@ Version: 3.5.3
       e.preventDefault();
     });
   });
+
  
  
   $(function() {
@@ -849,6 +927,7 @@ Version: 3.5.3
       }, 500);
     });
   });
+
  
  
   $.fn.extend({
@@ -861,6 +940,7 @@ Version: 3.5.3
       $('article.current').attr('aria-hidden',true);
       return this;
     },
+
     //////////////////////////
     // Remove Mask from Screen
     //////////////////////////
@@ -870,6 +950,8 @@ Version: 3.5.3
       return this;
     }
   });
+
+
   $.fn.extend({
     //////////////////////////////
     // Center an Element on Screen
@@ -881,6 +963,7 @@ Version: 3.5.3
       var position;
       if ($this.css('position') !== 'absolute') position = 'relative';
       else position = 'absolute';
+
       var height, width, parentHeight, parentWidth;
       if (position === 'absolute') {
         height = $this[0].clientHeight;
@@ -906,6 +989,8 @@ Version: 3.5.3
       $this.css({left: tmpLeft, top: tmpTop});
     }
   });
+
+
   $.fn.extend({
     ////////////////////////
     // Create Busy indicator
@@ -968,6 +1053,8 @@ Version: 3.5.3
       }
     }
   });
+
+
   $.extend({
     ///////////////
     // Create Popup
@@ -1040,6 +1127,7 @@ Version: 3.5.3
         }
     }
   });
+
   $.fn.extend({
     //////////////
     // Close Popup
@@ -1059,13 +1147,16 @@ Version: 3.5.3
         $(this).closest('.popup').UIPopupClose();
       }
     });
+
     /////////////////////////////////////////////////
     // Reposition popups on window resize:
     /////////////////////////////////////////////////
     window.onresize = function() {
       $.UICenterPopup();
     };
-  });  
+  });
+
+  
   $.fn.extend({ 
     /////////////////
     // Create Popover
@@ -1109,6 +1200,7 @@ Version: 3.5.3
           popover.css({'left': left + 'px', 'top': (calcTop + 20) + 'px'});
         }
       };
+
       $(this).on($.eventStart, function() {
         if ($('.mask')[0]) {
           $.UIPopoverClose();
@@ -1144,6 +1236,7 @@ Version: 3.5.3
       });
     }
   });
+
   $.extend({
     ///////////////////////////////////////
     // Align the Popover Before Showing it:
@@ -1163,6 +1256,7 @@ Version: 3.5.3
       }
     }
   });
+
   $.extend({
     UIPopoverClose : function ( ) {
       $('body').UIUnblock();
@@ -1188,7 +1282,9 @@ Version: 3.5.3
         $.UIPopoverClose();
       }
     });
-  }); 
+  });
+
+ 
   $.fn.extend({
     ///////////////////////////////
     // Initialize Segmented Control
@@ -1228,6 +1324,7 @@ Version: 3.5.3
       });
     }
   });
+
   $.extend({ 
     ///////////////////////////
     // Create Segmented Control
@@ -1262,12 +1359,15 @@ Version: 3.5.3
       return _segmented.join('');
     }
   });
+
   $(function() {
     /////////////////////////////////////
     // Handle Existing Segmented Buttons:
     /////////////////////////////////////
     $('.segmented').UISegmented();
   });
+
+
   $.fn.extend({
     ////////////////////////////////////////////
     // Allow Segmented Control to toggle panels
@@ -1298,6 +1398,7 @@ Version: 3.5.3
       });
     }
   });
+
  
  
   $.extend({
@@ -1324,6 +1425,7 @@ Version: 3.5.3
         var sections = function() {
           return currentArticle.children().length;
         };
+
         $('.segmented.paging').on($.eventStart, '.button:first-of-type', function() {
           if (sections() === 1) return;
           var $this = $(this);
@@ -1339,6 +1441,7 @@ Version: 3.5.3
             currentSection.removeClass('current').addClass('next');
             currentSection.prev().removeClass('previous').addClass('current');
           }
+
           setTimeout(function() {
             $this.removeClass('selected');
           }, 250);
@@ -1366,6 +1469,7 @@ Version: 3.5.3
         });
       }
   });
+
  
  
   $.extend({
@@ -1480,6 +1584,9 @@ Version: 3.5.3
       //return list;
     }
   });
+
+
+
   $.fn.extend({
     /////////////////////////
     // Initialize Select List
@@ -1536,6 +1643,9 @@ Version: 3.5.3
       });
     }
   });
+
+
+
   $.extend({
     ///////////////////////////////////////////////
     // UISheet: Create an Overlay for Buttons, etc.
@@ -1562,6 +1672,7 @@ Version: 3.5.3
         $.UIHideSheet();
       });
     },
+
     UIShowSheet : function ( ) {
       $('article.current').addClass('blurred');
       if ($.isAndroid || $.isChrome) {
@@ -1573,6 +1684,7 @@ Version: 3.5.3
         $('.sheet').addClass('opened');
       }
     },
+
     UIHideSheet : function ( ) {
       $('.sheet').removeClass('opened');
       $('article.current').addClass('removeBlurSlow');
@@ -1582,6 +1694,8 @@ Version: 3.5.3
       },500);
     }
   });
+
+
   $.extend({
     ////////////////////////////////////////////////
     // Create Slideout with toggle button.
@@ -1618,6 +1732,7 @@ Version: 3.5.3
       });
     }
   });
+
   $.extend($.UISlideout, {
     /////////////////////////////////////////////////////////////////
     // Method to populate a slideout with actionable items.
@@ -1646,6 +1761,8 @@ Version: 3.5.3
       }
     }
   });
+
+
   $.fn.extend({
     /////////////////
     // Create stepper
@@ -1720,6 +1837,7 @@ Version: 3.5.3
       });
     }
   });
+
   $.extend({
     ///////////////////////////////////////////
     // Pass the id of the stepper to reset.
@@ -1732,7 +1850,10 @@ Version: 3.5.3
       stepper.find('input')[0].value = defaultValue;
     }
   });
+
+
   $.fn.extend({
+
     ////////////////////////////
     // Initialize Switch Control
     ////////////////////////////
@@ -1783,6 +1904,7 @@ Version: 3.5.3
       });
     }
   });
+
   $.extend({
     ////////////////////////
     // Create Switch Control
@@ -1807,6 +1929,7 @@ Version: 3.5.3
       return $(_switch);
     }
   });
+
   $(function() {
     //////////////////////////
     // Handle Existing Switches:
@@ -1814,9 +1937,11 @@ Version: 3.5.3
     $('.switch').UISwitch();
   });
  
+
   document.addEventListener('touchstart', function (e) {
     var parent = e.target,
       i = 0;
+
     for (i = 0; i < 10; i += 1) {
       if (parent !== null) {
         if (parent.className !== undefined) {
@@ -1832,6 +1957,8 @@ Version: 3.5.3
       }
     }
   });
+
+
   $.extend({
     ///////////////////////////////////////////
     // Creates a Tab Bar for Toggling Articles:
@@ -1907,6 +2034,8 @@ Version: 3.5.3
       });
     }
   });
+
+
   $.extend({
   /////////////////////////////
   // Templating:
@@ -1927,7 +2056,9 @@ Version: 3.5.3
         "return p.join('');");
       return template;
     }
-  });  /////////////////////////
+  });
+
+  /////////////////////////
   // Create a search input:
   /////////////////////////
   /*
@@ -1952,6 +2083,8 @@ Version: 3.5.3
       }
     }
   });
+
+
   //////////////////////////////////
   // Initialize a swipable carousel:
   //////////////////////////////////
