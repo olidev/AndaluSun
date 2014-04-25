@@ -1,27 +1,32 @@
+// AndaluSun.js
+// ------------
 
-	var myScroll;
-	function loaded() {
-		myScroll = new iScroll('wrapper');
-	}
-	
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+var app = {
 
-	document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+	initialize: function() {
+		alert("initialize");
 
-
-    // Attendre que PhoneGap soit prêt
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap est prêt
-    //
-    function onDeviceReady() {
+	},
+	bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+    	alert("device ready");
+    	alert(device.platform);
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }
+
+};
+
+
+
+
+
 
     // Fonction de callback onSuccess, reçoit un objet Position
     //
     function onSuccess(position) {
+    alert(position.coords.latitude);
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude : '                + position.coords.latitude          + '<br/>' +
                             'Longitude : '               + position.coords.longitude         + '<br/>' +
