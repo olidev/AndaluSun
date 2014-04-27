@@ -6,6 +6,12 @@ var app = {
 
 	initialize: function() {
 		alert("app.initialize function");
+		
+		
+	    document.addEventListener("deviceready", onDeviceReady, false);
+			    
+			    
+			    
 		this.bindEvents();
 	},
 	bindEvents: function() {
