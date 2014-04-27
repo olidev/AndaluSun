@@ -2275,7 +2275,8 @@ body.hasTabBar .next:not(.navigable) {
 }
 .tabbar > .button:hover,
 .tabbar > .button.selected {
-  color: #007aff !important;
+  /* color: #007cff !important;   ---- ODV ---- */
+  color: #00a31f !important;
   opacity: 1 !important;
 }
 .tabbar > .button:hover > .icon,
