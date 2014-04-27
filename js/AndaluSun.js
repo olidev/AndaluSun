@@ -14,7 +14,7 @@ var app = {
     },
     onDeviceReady: function() {
     	alert("device ready");
-    	alert(device.platform);
+    	alert("js : " + device.platform);
     	pushNotification = window.plugins.pushNotification;
     	
     	
