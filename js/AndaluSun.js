@@ -4,9 +4,8 @@
 var app = {
 
 	initialize: function() {
-		alert("initialize");
+		alert("initialize function");
 		this.bindEvents();
-
 	},
 	bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -24,9 +23,9 @@ var app = {
 
 
 
-    // Fonction de callback onSuccess, reçoit un objet Position
-    //
-    function onSuccess(position) {
+// Fonction de callback onSuccess, reçoit un objet Position
+//
+function onSuccess(position) {
     alert(position.coords.latitude);
         var element = document.getElementById('geolocation');
         element.innerHTML = 'Latitude : '                + position.coords.latitude          + '<br/>' +
@@ -36,12 +35,11 @@ var app = {
                             'Précision altitude : ' 	 + position.coords.altitudeAccuracy  + '<br/>' +
                             'Direction : '               + position.coords.heading           + '<br/>' +
                             'Vitesse : '                 + position.coords.speed             + '<br/>';
-    }
+}
 
-    // Fonction de callback onError, reçoit un objet PositionError
-    //
-    function onError(error) {
+// Fonction de callback onError, reçoit un objet PositionError
+//
+function onError(error) {
         alert('code : '    + error.code    + '\n' +
               'message : ' + error.message + '\n');
-    }
-
+}
