@@ -5,7 +5,7 @@
 var app = {
 
 	initialize: function() {
-
+		alert("initialize function");
 		this.bindEvents();
 	},
 	bindEvents: function() {
