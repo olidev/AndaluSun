@@ -91,6 +91,7 @@ var app = {
     	alert("device ready");
     	//uuid = device.uuid;
     	alert(uuid);
+    	alert(device.platform);
     	pushNotification = window.plugins.pushNotification;
     	
     	

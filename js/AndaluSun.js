@@ -6,63 +6,6 @@ var app = {
 
 	initialize: function() {
 
-		//Creation of the css class
-		var style = document.createElement('style');
-		style.type = 'text/css';
-		style.innerHTML = '.cssClass { position:absolute; z-index:2; left:0; top:50px; width:100%; height: '+heightBody+'px; overflow:auto;}';
-		document.getElementsByTagName('head')[0].appendChild(style);
-
-		//Add the css class
-		wrapper.className = 'cssClass';
-
-		/*Load default option
-		xhReq.open("GET", "options/option1.html", false);
-		xhReq.send(null);
-		document.getElementById("sectionContent").innerHTML=xhReq.responseText;*/
-		//Creation of the scroll using iScroll plugin
-		myScroll = new iScroll('wrapper', { hideScrollbar: true });
-		var url = "";
-		var flagStep2 = 0;
-		if(storage.getItem("accessCompletion") == null){
-			$("#showMenuButton").hide();
-			url = "options/createAccess.html";
-			myScroll.disable();
-		}
-		else if(storage.getItem("accessCompletion") == 1){
-			$("#showMenuButton").hide();
-			url = "options/createAccess.html";
-			myScroll.disable();
-			flagStep2 = 1;
-		}
-		else if(storage.getItem("accessCompletion") == 2){
-			url = "options/option1.html";
-			flagStep2 = 2;
-		}
-		else{
-			url = "options/option1.html";
-			flagStep2 = 2;
-		}
-		$.ajax({
-			url: url,
-		  	success: function(result){
-		  		document.getElementById("sectionContent").innerHTML=result;
-		  	},
-		  	dataType: "html"
-		});
-		if(flagStep2 == 1){
-			$("#apbPrompt").hide();
-			$("#secretPrompt").show();
-		}
-		else if(flagStep2 == 2){
-			$("marquee").marquee();
-		}
-
-		//Add default active class to the menu
-		$( "ul.ulMenu li:nth-child(1)" ).addClass( "active" );
-		
-
-		//Add default header title
-		$sectionTitle.text('Offiboard');
 		this.bindEvents();
 	},
 	bindEvents: function() {
