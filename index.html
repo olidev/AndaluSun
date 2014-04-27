@@ -88,6 +88,20 @@
 	<script type="text/javascript" src="js/AndaluSun.js"></script>      
 	
 	<script type="text/javascript">
+	
+	
+	    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    //
+    function onDeviceReady() {
+        // Now safe to use the PhoneGap API
+         alert(device.platform);
+            	
+    }
+    
+    
+    
 	    app.initialize();
 	</script>
 </body>

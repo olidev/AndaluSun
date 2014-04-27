@@ -5,16 +5,15 @@
 var app = {
 
 	initialize: function() {
-		alert("initialize function");
+		alert("app.initialize function");
 		this.bindEvents();
 	},
 	bindEvents: function() {
+		alert("app.bind function");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
     	alert("device ready");
-    	//uuid = device.uuid;
-    	alert(uuid);
     	alert(device.platform);
     	pushNotification = window.plugins.pushNotification;
     	
