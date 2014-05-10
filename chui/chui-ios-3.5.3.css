@@ -104,9 +104,9 @@ small,
 article {
   position: absolute;
   top: 45px;
-  right: 0;
+  right: 5px;
   bottom: 0;
-  left: 0;
+  left: 5px;
   -webkit-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
   overflow-x: hidden;
