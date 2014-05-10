@@ -103,7 +103,7 @@ small,
    =========================== */
 article {
   position: absolute;
-  top: 45px;
+  top: 65px;
   right: 5px;
   bottom: 0;
   left: 5px;
@@ -279,7 +279,10 @@ a.button.backTo {
   text-align: left;
   padding: 0 0 0 20px !important;
   line-height: 28px;
-  color: #007aff;
+  color: #E1D543;
+  
+  /* color: #007cff !important;   ---- ODV ---- */
+  
   border: none;
   position: relative;
   overflow: hidden;
@@ -292,7 +295,10 @@ a.button.backTo::before {
   display: block;
   content: '';
   border: solid 1px transparent;
-  background-color: #007aff;
+  /* background-color: #007aff;   ---- ODV ---- */
+  
+  background-color: #E1D543;
+  
   -webkit-mask-position: 50% 50%;
   -webkit-mask-size: 90% 90%;
   -webkit-mask-repeat: no-repeat;

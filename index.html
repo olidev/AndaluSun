@@ -23,7 +23,7 @@
          imagePath : "../icons-ios/",
          color : "#FEFEFE",
          icons : ["music", "pictures", "docs", "recipes", "more"],
-         labels : ["Home", "Restaurants", "Shopping", "Visites", "Golf"],
+         labels : ["Home", "Restaurants", "Shopping", "Golf", "Visites"],
          selected : 1
       };
       $.UITabbar(opts);
@@ -57,10 +57,10 @@
       -webkit-mask-image: url('images/icons/Shopping.svg');
     }
     .tabbar > .button.recipes > .icon  {
-      -webkit-mask-image: url('images/icons/Direction.svg');
+      -webkit-mask-image: url('images/icons/Golf.svg');
     }
      .tabbar > .button.more > .icon  {
-      -webkit-mask-image: url('images/icons/Golf.svg');
+      -webkit-mask-image: url('images/icons/Direction.svg');
     }
     .image-grid, .image-grid > li {
       list-style: none:
@@ -89,10 +89,10 @@
 <body>
 
 
-  <nav class="current" style="background-color:#1F9456;">
-    <h1 style="margin-top: 22px; color: #E1D543;">AndaluSun</h1>
+  <nav class="current" style="height:65px;background-color:#1F9456;">
+    <h1 style="margin-top: 25px; color: #E1D543;">AndaluSun</h1>
   </nav>
-  <!-- article resto -->
+  <!-- article Home -->
   <article id="home" class="current">
     <section>
 			<img src="img/AndaluSunLogo.png">
@@ -107,11 +107,11 @@
 				</ul>
 			</div><!-- menu end -->
     </section>
-  </article><!-- article resto end -->
+  </article><!-- article home end -->
   
   
   
-  <nav class="next" style="background-color:#1F9456;">
+  <nav class="next" style="height:65px;background-color:#1F9456;">
     <h1 style="margin-top: 25px; color: #E1D543;">Restaurants</h1>
   </nav>
   <!-- article resto -->
@@ -323,18 +323,46 @@ http://www.lacasadelrey.es<br />
   
   
   
-  
-  
+  <!-- shopping begin -->
+ 
   <nav class="next" style="height:65px;background-color:#1F9456;">
     <h1 style="margin-top: 25px; color: #E1D543;">Shopping</h1>
   </nav>
   <!-- article shopping -->
   <article id='shopping' class='next'>
     <section>
-	          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    SHOPPING    !!!!    
     </section>
   </article><!-- article shopping end -->
+  
+  <!-- shopping end -->
+  
+  
+  
+  
+  
+  
+
+
+  
+  <nav class="next" style="height:65px;background-color:#1F9456;">
+    <h1 style="margin-top: 25px; color: #E1D543;">Golf</h1>
+  </nav>
+  <!-- article golf -->
+  <article id="golf" class="next">
+    <section>
+GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     GOLF !!!!     
+ 
+ 
+     </section>
+
+  </article><!-- article golf end -->
+
+
+
+
+
+
   
   
   
@@ -346,120 +374,49 @@ http://www.lacasadelrey.es<br />
     <h1 style="margin-top: 25px; color: #E1D543;">Visites</h1>
   </nav>
   <!-- article visites -->
-  <article if="visites" class="next">
+  <article id="visites" class="next">
     <section>
- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-     </section>
-  </article><!-- article visites end -->
-  
-  
-  
-  
-  
-  
-  
-  
-  <nav class="next" style="height:65px;background-color:#1F9456;">
-    <h1 style="margin-top: 25px; color: #E1D543;">Golf</h1>
-  </nav>
-  <!-- article golf -->
-  <article  id="golf" class="next">
-    <section>
-      <h2>Uses</h2>
-      <ul class="list">
-        <li>
-          <h3>Juice</h3>
-        </li>
-        <li>
-          <h3>Smoothies</h3>
-        </li>
-        <li>
-          <h3>Fruit Salad</h3>
+
+     <ul class='list'>
+        <li class='comp' data-goto="50km">
+          <div>
+            <h3>L'essentiel à moins de 50 km</h3>
+          </div>
+          <aside>
+            <span class='nav'></span>
+          </aside>
         </li>
       </ul>
     </section>
   </article>
-  <nav class="next">
-    <a href="#" class="button back">Back</a>
-    <h1>Bananas</h1>
+
+
+
+
+
+
+  <nav class='next' style="height:65px;background-color:#1F9456;">
+    <a href='#' class='button back' style="color: #E1D543;">Visites</a>
+    <h1 style="margin-top: 25px; color: #E1D543;">à moins de 50 km</h1>
   </nav>
-  <article class="next" id="bananas">
+  <article id="50km" class='next'>
     <section>
-      <h2>Uses</h2>
-      <ul class="list">
+      <h2>L'eesentiel à moins de 50 km</h2>
+      <ul class='list' >
         <li>
-          <h3>Smoothies</h3>
-        </li>
-        <li>
-          <h3>Pudding</h3>
-        </li>
-        <li>
-          <h3>Fruit Salad</h3>
-        </li>
-      </ul>
-    </section>
-  </article>
-  <nav class="next">
-    <a href="#" class="button back">Back</a>
-    <h1>Peaches</h1>
-  </nav>
-  <article class="next" id="peaches">
-    <section>
-      <h2>Uses</h2>
-      <ul class="list">
-        <li>
-          <h3>Cobbler</h3>
-        </li>
-        <li>
-          <h3>Pie</h3>
-        </li>
-        <li>
-          <h3>Smoothies</h3>
-        </li>
-      </ul>
-    </section>
-  </article>
-  <nav class="next">
-    <a href="#" class="button back">Back</a>
-    <h1>Strawberries</h1>
-  </nav>
-  <article class="next" id="strawberries">
-    <section>
-      <h2>Uses</h2>
-      <ul class="list">
-        <li>
-          <h3>Cereal</h3>
-        </li>
-        <li>
-          <h3>Smoothies</h3>
-        </li>
-        <li>
-          <h3>Fruit Salad</h3>
-        </li>
-      </ul>
-    </section>
-  </article>
-  <nav class="next">
-    <a href="#" class="button back">Back</a>
-    <h1>Cherries</h1>
-  </nav>
-  <article class="next" id="cherries">
-    <section>
-      <h2>Uses</h2>
-      <ul class="list">
-        <li>
-          <h3>Pies</h3>
-        </li>
-        <li>
-          <h3>Pastries</h3>
-        </li>
-        <li>
-          <h3>Fruit Salad</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </li>
       </ul>
 
+
     </section>
-  </article><!-- article golf end -->
+  </article><!-- article visites end -->
+  
+  
+
+
+
   
  
   
